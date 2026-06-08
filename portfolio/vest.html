@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assist Vest — Alaa</title>
+  <meta name="description" content="Assist Vest: AI-powered wearable assistive device for visually impaired users, built by Alaa.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">alaa.dev</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="mailto:alaa1190a@gmail.com" class="nav-cta btn">Hire Me</a>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav-mobile-menu">
+    <a href="index.html#about">About</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="mailto:alaa1190a@gmail.com">Hire Me</a>
+  </div>
+
+  <a href="index.html" class="back-link">← All Projects</a>
+
+  <div class="project-hero">
+    <div class="project-hero-meta">
+      <span class="meta-tag">Embedded Systems</span>
+      <span class="meta-tag">Computer Vision</span>
+      <span class="meta-tag">Assistive Tech</span>
+      <span class="meta-tag">Graduation Project</span>
+      <span class="meta-tag">2026</span>
+    </div>
+    <h1>Assist Vest</h1>
+    <p class="project-hero-sub">
+      Raspberry Pi wearable for visually impaired users — real-time YOLOv8 object detection, GPS tracking, ultrasonic obstacle sensing, and a live WebSocket dashboard.
+    </p>
+    <div class="project-links">
+      <a href="https://alaa1252.github.io/vest-dashboard-frontend/" target="_blank" class="btn btn-primary">Live Dashboard</a>
+      <a href="https://github.com/alaa1252/vest-dashboard-backend" target="_blank" class="btn btn-ghost">GitHub</a>
+      <a href="#demo-video" class="btn btn-ghost">Watch Demo ↓</a>
+    </div>
+  </div>
+
+  <hr class="full-divider">
+
+  <div class="case-study">
+
+    <h2 class="fade-up">Overview</h2>
+    <p class="fade-up">
+      Assist Vest is a wearable assistive device designed for visually impaired users. A Raspberry Pi mounted in a vest processes live camera input through a YOLOv8 object detection model, reads data from ultrasonic distance sensors and a GPS module, and streams everything in real time to a remote web dashboard via WebSocket. The system provides both on-device audio alerts and remote monitoring by a caregiver.
+    </p>
+    <p class="fade-up">
+      The live dashboard is deployed at GitHub Pages. It requires the physical vest hardware to be active and on the same network for real telemetry — a normal constraint for any hardware-dependent system.
+    </p>
+
+    <h2 class="fade-up">Problem</h2>
+    <p class="fade-up">
+      Assistive technology for the visually impaired is either prohibitively expensive or limited to single-function devices (cane, single sonar). The goal was to design an integrated wearable that combines spatial awareness, object recognition, location tracking, and remote monitoring into a single affordable platform built on off-the-shelf components.
+    </p>
+
+    <h2 class="fade-up">System Architecture</h2>
+    <div class="arch-diagram fade-up">┌────────────────────────────────────────────────────────┐
+│                      VEST HARDWARE                     │
+│                                                        │
+│   ┌────────────────────────────────────────────────┐   │
+│   │             3S3P Battery Pack                  │   │
+│   │         [ Provides VCC / GND Power ]           │   │
+│   └───────┬────────────────────────┬───────────────┘   │
+│           │ Power                  │ Power             │
+│           ▼                        ▼                   │
+│   ┌────────────────┐       ┌───────────────────────┐   │
+│   │    Arduino     │       │    Raspberry Pi 4     │   │
+│   │ (Signal Ctrl)  │       │   (Python Backend)    │   │
+│   └─┬─────┬─────┬──┘       └─▲──────┬───────┬──────┘   │
+│     │     │     │            │      │       │          │
+│     ▼     ▼     ▼            │      ▼       ▼          │
+│   ┌───┐ ┌───┐ ┌────┐         │   ┌─────┐ ┌──────────┐  │
+│   │Ult│ │Tem│ │Buz─│         │   │Cam─ │ │Head─     │  │
+│   │ras│ │p. │ │zer/│         │   │era  │ │phones    │  │
+│   │ond│ │Sen│ │Vib.│         │   └─────┘ │(Audio    │  │
+│   └───┘ └───┘ └────┘         │           │ Alerts)  │  │
+│                              │           └──────────┘  │
+│                              │                         │
+│                              │ Serial Communication    │
+│                              └───────────────────────┘ │
+└──────────────────────────────┬─────────────────────────┘
+                               │
+                       WebSocket / Wi-Fi
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │  Deployed Dashboard │
+                    │   React + Leaflet   │
+                    │                     │
+                    │ Live GPS Map        │
+                    │ Object Detection    │
+                    │ Temperature Tracking│
+                    │ Emergency Alerts    │
+                    └─────────────────────┘</div>
+
+    <h2 class="fade-up">Tech Stack</h2>
+    <div class="tech-grid fade-up">
+      <div class="tech-cell">
+        <h4>Hardware</h4>
+        <p>Raspberry Pi 4 · Pi Camera · HC-SR04 Ultrasonic Sensors · GPS Module · DHT Temperature Sensor</p>
+      </div>
+      <div class="tech-cell">
+        <h4>Computer Vision</h4>
+        <p>YOLOv8 · OpenCV · Python · Real-time object detection at edge</p>
+      </div>
+      <div class="tech-cell">
+        <h4>Communication</h4>
+        <p>WebSocket · Python websockets library · Low-latency streaming telemetry</p>
+      </div>
+      <div class="tech-cell">
+        <h4>Web Dashboard</h4>
+        <p>React · Leaflet.js · Live GPS map · Detection feed · System status</p>
+      </div>
+      <div class="tech-cell">
+        <h4>Audio Feedback</h4>
+        <p>Text-to-speech alerts on the vest for detected objects and proximity warnings</p>
+      </div>
+      <div class="tech-cell">
+        <h4>Deployment</h4>
+        <p>Dashboard hosted on GitHub Pages · Pi runs headless Python service on boot</p>
+      </div>
+    </div>
+
+    <h2 class="fade-up">Key Features</h2>
+    <ul class="fade-up">
+      <li>Real-time YOLOv8 object detection — identifies people, vehicles, obstacles, and common objects</li>
+      <li>Ultrasonic proximity alerts for close-range obstacle avoidance with audio feedback</li>
+      <li>Live GPS tracking visible on an interactive map in the web dashboard</li>
+      <li>Temperature and environmental monitoring streamed alongside other telemetry</li>
+      <li>Emergency alert system — caregiver can be notified of unusual stops or falls</li>
+      <li>WebSocket-based live feed with sub-second latency on local network</li>
+      <li>Headless auto-start: Pi boots and connects without any user interaction on the device</li>
+    </ul>
+
+    <h2 id="demo-video" class="fade-up">Demo Video</h2>
+    <p class="fade-up">
+A full demonstration of the wearable system in action, showcasing real-time YOLOv8 object recognition, local audio alerts, and live GPS and telemetry synchronization with the web dashboard.    </p>
+    <div class="video-container fade-up">
+      <iframe
+        src="https://drive.google.com/file/d/12pnrx7rOnG3Ceei94mnU9YtRWDqxen3H/preview" 
+        allow="autoplay"
+        allowfullscreen>
+      </iframe>
+      <div class="video-label">Full system demonstration · 15 minutes · Real device, real data</div>
+    </div>
+
+    <h2 class="fade-up">Challenges</h2>
+
+    <div class="challenge-block fade-up">
+      <h4>YOLOv8 Performance on Raspberry Pi</h4>
+      <p>Running a full YOLOv8 model at acceptable frame rates on the Pi's CPU required tuning: using the nano model variant, downscaling inference resolution, and batching frames to trade latency for throughput. The result was a usable detection rate for real-world walking scenarios.</p>
+    </div>
+
+    <div class="challenge-block fade-up">
+      <h4>Sensor Data Fusion</h4>
+      <p>Synchronising output from four different sources — camera, two ultrasonic sensors, GPS, and temperature — into a single coherent WebSocket message required careful timestamping and a central data aggregation loop on the Pi to avoid stale or mismatched readings.</p>
+    </div>
+
+    <div class="challenge-block fade-up">
+      <h4>WebSocket Stability Over Wi-Fi</h4>
+      <p>The Pi's Wi-Fi connection could drop or degrade during movement. Added automatic reconnection logic on both the Pi and the dashboard client, with graceful degradation — the dashboard shows a "Reconnecting…" state rather than crashing when the connection drops.</p>
+    </div>
+
+    <div class="challenge-block fade-up">
+      <h4>Power & Heat Management</h4>
+      <p>Running YOLOv8 continuously caused CPU throttling due to heat. Solved by adding a cooling heatsink, throttling inference to only run when ultrasonic sensors detect proximity below a threshold, and implementing sleep cycles when the user is stationary.</p>
+    </div>
+
+    <h2 class="fade-up">What I Learned</h2>
+    <p class="fade-up">
+      This project was my deepest dive into the intersection of software and physical hardware. I learned how to design systems with real-world constraints — battery life, thermal limits, wireless reliability — that don't exist in pure software projects. Working with YOLOv8 at the edge taught me a lot about model optimization trade-offs. And building something with a genuine social purpose changed how I think about what software is for.
+    </p>
+
+    <div style="margin-top:64px; padding-top:40px; border-top:1px solid var(--line); display:flex; gap:16px; flex-wrap:wrap;" class="fade-up">
+      <a href="https://alaa1252.github.io/vest-dashboard-frontend/" target="_blank" class="btn btn-primary">Live Dashboard</a>
+      <a href="https://github.com/alaa1252/vest-dashboard-backend" target="_blank" class="btn btn-ghost">GitHub</a>
+      <a href="eduplatform.html" class="btn btn-ghost">Next Project →</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <span>© 2026 Alaa. Designed &amp; built from scratch.</span>
+    <span>Full-Stack Engineer · Palestine</span>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

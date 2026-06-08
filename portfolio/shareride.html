@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHARE-RIDE — Alaa</title>
+  <meta name="description" content="SHARE-RIDE: AI-powered ride-hailing dispatch platform built by Alaa.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">alaa.dev</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="mailto:alaa1190a@gmail.com" class="nav-cta btn">Hire Me</a>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav-mobile-menu">
+    <a href="index.html#about">About</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="mailto:alaa1190a@gmail.com">Hire Me</a>
+  </div>
+
+  <a href="index.html" class="back-link">← All Projects</a>
+
+  <!-- PROJECT HERO -->
+  <div class="project-hero">
+    <div class="project-hero-meta">
+      <span class="meta-tag">Ride-Hailing Platform</span>
+      <span class="meta-tag">SaaS</span>
+      <span class="meta-tag">Graduation Project</span>
+      <span class="meta-tag">2026</span>
+    </div>
+    <h1>SHARE-RIDE</h1>
+    <p class="project-hero-sub">
+      Full-stack, AI-powered ride-hailing dispatch platform with real-time tracking, intelligent driver matching, sentiment analysis, and SaaS-ready architecture.
+    </p>
+    <div class="project-links">
+      <a href="https://alaa1252.github.io/SaaS-Bootstrap-Project/album.html" target="_blank" class="btn btn-primary">View Product Site</a>
+      <a href="#demo-video" class="btn btn-ghost">Watch Demo ↓</a>
+      
+    </div>
+  </div>
+
+  <hr class="full-divider">
+
+  <!-- CASE STUDY -->
+  <div class="case-study">
+
+    <h2 class="fade-up">Overview</h2>
+    <p class="fade-up">
+      SHARE-RIDE is a complete ride-hailing ecosystem built as a graduation project, comparable in scope to production platforms like Uber or Careem. The system includes a cross-platform passenger mobile app, a driver mobile app, a real-time dispatch backend, an admin dashboard with analytics, an AI matching engine, and a full SaaS marketing website.
+    </p>
+    <p class="fade-up">
+      The project was designed to be production-architecture from the start — not a prototype, but a system that could plausibly handle real dispatch operations with proper role separation, real-time synchronization, and intelligent automation.
+    </p>
+
+    <h2 class="fade-up">Problem</h2>
+    <p class="fade-up">
+      Ride-hailing software in developing markets is either expensive proprietary software or rudimentary systems with no intelligence layer. The goal was to design and implement a complete, self-contained dispatch platform that demonstrated how modern SaaS ride-hailing architecture actually works — from matching algorithms down to payment flows and admin oversight.
+    </p>
+
+    <h2 class="fade-up">Architecture</h2>
+    <div class="arch-diagram fade-up">┌─────────────────┐     ┌─────────────────┐
+│  Passenger App  │     │   Driver App    │
+│  (React Native) │     │  (React Native) │
+└────────┬────────┘     └────────┬────────┘
+         │                       │
+         └──────────┬────────────┘
+                    │ REST / WebSocket
+                    ▼
+          ┌─────────────────┐
+          │   Backend API   │
+          │  Node.js + Exp  │
+          └────────┬────────┘
+                   │
+        ┌──────────┼──────────┐
+        ▼          ▼          ▼
+  ┌──────────┐ ┌───────┐ ┌──────────┐
+  │MongoDB   │ │ Redis │ │ AI Engine│
+  │          │ │ Cache │ │  Python  │
+  └──────────┘ └───────┘ └──────────┘
+                   │
+                   ▼
+        ┌─────────────────┐
+        │ Admin Dashboard │
+        │     React       │
+        └─────────────────┘</div>
+
+    <h2 class="fade-up">Tech Stack</h2>
+    <div class="tech-grid fade-up">
+      <div class="tech-cell">
+        <h4>Mobile (Passenger &amp; Driver)</h4>
+        <p>React Native · Expo · Maps SDK · Real-time location</p>
+      </div>
+      <div class="tech-cell">
+        <h4>Backend API</h4>
+        <p>Node.js · Express · WebSocket · Firebase Auth · REST</p>
+      </div>
+      <div class="tech-cell">
+        <h4>Database &amp; Caching</h4>
+        <p>MongoDB  · Redis · Optimized geospatial queries</p>
+      </div>
+      <div class="tech-cell">
+        <h4>AI Engine</h4>
+        <p>Driver matching algorithm · Sentiment analysis on ride reviews</p>
+      </div>
+      <div class="tech-cell">
+        <h4>Admin Dashboard</h4>
+        <p>React · Real-time analytics · Fleet management · User roles</p>
+      </div>
+      <div class="tech-cell">
+        <h4>Marketing Site</h4>
+        <p>Bootstrap · SaaS landing page · Pricing · Features showcase</p>
+      </div>
+    </div>
+
+    <h2 class="fade-up">Key Features</h2>
+    <ul class="fade-up">
+      <li>Real-time GPS tracking for passengers and dispatchers via WebSocket</li>
+      <li>AI-powered driver-passenger matching based on proximity, rating, and load balancing</li>
+      <li>Multi-role authentication: passenger, driver, admin with role-based dashboards</li>
+      <li>Sentiment analysis on ride reviews to surface driver performance insights</li>
+      <li>Fare calculation engine with surge pricing logic</li>
+      <li>Admin fleet overview with live map of all active drivers</li>
+      <li>Complete trip lifecycle: request → match → pickup → dropoff → payment → review</li>
+    </ul>
+
+    <h2 id="demo-video" class="fade-up">Demo Video</h2>
+    <p class="fade-up">
+      A full 15-minute walkthrough covering the passenger app, driver workflow, dispatch logic, admin dashboard, and AI matching engine. The backend is not publicly deployed due to infrastructure costs, but the video demonstrates the complete system in real-time.
+    </p>
+    <div class="video-container fade-up">
+      <iframe
+        src="https://drive.google.com/file/d/12pnrx7rOnG3Ceei94mnU9YtRWDqxen3H/preview"
+        allow="autoplay"
+        allowfullscreen>
+      </iframe>
+      <div class="video-label">Full system demonstration · 15 minutes · Real device, real data</div>
+    </div>
+
+    <h2 class="fade-up">Challenges</h2>
+
+    <div class="challenge-block fade-up">
+      <h4>Real-time Location Synchronisation</h4>
+      <p>Broadcasting driver positions to passengers and dispatchers at high frequency created excessive WebSocket traffic. Solved by implementing position throttling, delta-only updates, and a Redis pub/sub layer to decouple broadcasting from the API server.</p>
+    </div>
+
+    <div class="challenge-block fade-up">
+      <h4>Driver Matching Under Concurrency</h4>
+      <p>Multiple passengers requesting simultaneously could result in the same driver being assigned twice. Solved using optimistic locking at the database level and an atomic claim mechanism in the matching engine.</p>
+    </div>
+
+    <div class="challenge-block fade-up">
+      <h4>Multi-role System Design</h4>
+      <p>Designing three distinct user flows (passenger, driver, admin) that share a single backend without leaking data or permissions required careful middleware layering and JWT claim scoping.</p>
+    </div>
+
+    <div class="challenge-block fade-up">
+      <h4>Sentiment Analysis Integration</h4>
+      <p>Connecting the groq AI and hugginface ai service to the Node.js backend asynchronously — without blocking the main request cycle — required a lightweight internal queue and a clean REST boundary between the services.</p>
+    </div>
+
+    <h2 class="fade-up">What I Learned</h2>
+    <p class="fade-up">
+      Building SHARE-RIDE taught me how real-time systems fail at scale — and how to prevent it. I came away with a much deeper understanding of WebSocket state management, the value of Redis as a coordination layer, and how to design multi-role systems that stay maintainable as complexity grows. The AI integration also taught me how to cleanly boundary-separate different language runtimes inside a single product.
+    </p>
+
+    <div style="margin-top:64px; padding-top:40px; border-top:1px solid var(--line); display:flex; gap:16px; flex-wrap:wrap;" class="fade-up">
+      <a href="https://alaa1252.github.io/SaaS-Bootstrap-Project/album.html" target="_blank" class="btn btn-primary">View Product Site</a>
+      <a href="vest.html" class="btn btn-ghost">Next Project →</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <span>© 2026 Alaa. Designed &amp; built from scratch.</span>
+    <span>Full-Stack Engineer · Palestine</span>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

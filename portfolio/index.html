@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alaa — Full-Stack Engineer</title>
+  <meta name="description" content="Portfolio of Alaa, a Full-Stack Engineer specializing in mobile apps, AI-powered systems, and embedded hardware.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">alaa.dev</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="mailto:alaa1190a@gmail.com" class="nav-cta btn">Hire Me</a>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav-mobile-menu">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <a href="mailto:alaa1190a@gmail.com">Hire Me</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <span class="hero-eyebrow">Available for opportunities</span>
+    <h1>
+      Full-Stack<br>
+      <em>Engineer</em>
+    </h1>
+    <p class="hero-sub">
+      I build complete systems — from mobile apps and web platforms to AI pipelines and embedded hardware. Based in Palestine.
+    </p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+    </div>
+    <span class="hero-scroll">Scroll</span>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-header">
+      <span class="section-label" data-num="01">About</span>
+    </div>
+    <div class="about-grid">
+      <div class="about-cell about-bio fade-up">
+        <h3>Who I Am</h3>
+        <p style="font-size:17px; color:var(--text); line-height:1.8; margin-bottom:16px;">
+          I'm Alaa, a Full-Stack Engineer who builds end-to-end software systems. My work spans ride-hailing platforms, AI-powered assistive hardware, educational platforms, and more — from database design through to polished mobile interfaces.
+        </p>
+        <p style="font-size:16px; color:var(--text-dim); line-height:1.8;">
+          I care about systems that work under real conditions, code that is maintainable, and products that solve genuine problems. I'm comfortable across the entire stack and enjoy the moments where software meets hardware.
+        </p>
+      </div>
+      <div class="about-cell fade-up">
+        <h3>Core Stack</h3>
+        <ul class="skill-list">
+          <li>React Native</li>
+          <li>Node.js</li>
+          <li>React</li>
+          <li>Express</li>
+          <li>PostgreSQL</li>
+          <li>MongoDB</li>
+          <li>Python</li>
+          <li>Raspberry Pi</li>
+          <li>YOLOv8</li>
+          <li>WebSocket</li>
+          <li>REST APIs</li>
+          <li>Docker</li>
+          <li>Git</li>
+        </ul>
+      </div>
+      <div class="about-cell fade-up">
+        <h3>Education</h3>
+        <p style="font-size:15px; color:var(--text-dim); line-height:1.7;">
+          Bachelor's in Computer Engineering<br>
+          <span style="color:var(--text-dimmer); font-size:13px;">An-Najah National University · Palestine</span>
+        </p>
+      </div>
+      <div class="about-cell fade-up">
+        <h3>Interests</h3>
+        <ul class="skill-list">
+          <li>Assistive Technology</li>
+          <li>AI / Computer Vision</li>
+          <li>Mobile Development</li>
+          <li>Embedded Systems</li>
+          <li>SaaS Products</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS -->
+  <section id="projects">
+    <div class="section-header">
+      <span class="section-label" data-num="02">Featured Projects</span>
+      <span style="font-family:var(--font-mono);font-size:11px;color:var(--text-dimmer);letter-spacing:0.08em;">4 selected works</span>
+    </div>
+    <div class="projects-grid">
+
+      <!-- SHARE-RIDE -->
+      <a href="shareride.html" class="project-card fade-up">
+        <div class="project-num">01</div>
+        <div class="project-type">Ride-Hailing Platform · SaaS</div>
+        <h3>SHARE-RIDE</h3>
+        <p class="project-desc">
+          Full-stack Uber-like dispatch platform with AI-powered driver matching, real-time GPS tracking, sentiment analysis, and multi-role dashboards for passengers, drivers, and admins.
+        </p>
+        <div class="project-tags">
+          <span>React Native</span>
+          <span>React</span>
+          <span>Node.js</span>
+          <li>MongoDB</li>
+          <span>Groq AI (LLaMA 3.1)</span>
+          <span>Hugging Face Inference API</span>
+          <span>WebSocket</span>
+        </div>
+      </a>
+
+      <!-- ASSIST VEST -->
+      <a href="vest.html" class="project-card fade-up">
+        <div class="project-num">02</div>
+        <div class="project-type">Embedded Systems · AI · Assistive Tech</div>
+        <h3>Assist Vest</h3>
+        <p class="project-desc">
+          Raspberry Pi wearable for visually impaired users with real-time YOLOv8 object detection, GPS tracking, ultrasonic obstacle sensing, and a live web dashboard with WebSocket telemetry.
+        </p>
+        <div class="project-tags">
+          <span>Raspberry Pi</span>
+          <span>YOLOv8</span>
+          <span>Python</span>
+          <span>React</span>
+          <span>WebSocket</span>
+          <span>GPS</span>
+        </div>
+      </a>
+
+      <!-- EDU PLATFORM -->
+      <a href="eduplatform.html" class="project-card fade-up">
+        <div class="project-num">03</div>
+        <div class="project-type">Web Application · EdTech</div>
+        <h3>EduPlatform</h3>
+        <p class="project-desc">
+          Frontend educational platform with course management, student/instructor roles, content delivery, and progress tracking. Deployed live.
+        </p>
+        <div class="project-tags">
+          <span>React</span>
+          
+        </div>
+      </a>
+
+      <!-- CRYPTO -->
+      <a href="crypto.html" class="project-card fade-up">
+        <div class="project-num">04</div>
+        <div class="project-type">Machine Learning · Finance</div>
+        <h3>Crypto Prediction</h3>
+        <p class="project-desc">
+          Cryptocurrency price forecasting system using machine learning models trained on historical market data, with a visualisation dashboard for prediction results.
+        </p>
+        <div class="project-tags">
+          <span>Python</span>
+          <span>LSTM</span>
+          <span>Pandas</span>
+          <span>Scikit-learn</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- OTHER PROJECTS -->
+  <section id="other">
+    <div class="section-header">
+      <span class="section-label" data-num="03">Other Work</span>
+      <span style="font-family:var(--font-mono);font-size:11px;color:var(--text-dimmer);letter-spacing:0.08em;">Experiments &amp; smaller builds</span>
+    </div>
+    <div class="other-grid">
+
+      <div class="other-card fade-up">
+        <h4>SavingHope</h4>
+        <p>A web platform connecting donors with charitable campaigns, featuring real-time progress tracking and payment integration.</p>
+        <span class="other-link">Private Project</span>
+      </div>
+
+      <a href="https://alaa1252.github.io/remotework-tailwind/" target="_blank" class="other-card fade-up">
+        <h4>Remote Job Platform</h4>
+        <p>A clean job listing interface for remote opportunities, built with Tailwind CSS and a responsive, filterable layout.</p>
+        <span class="other-link">↗ View Live</span>
+      </a>
+
+      <a href="https://alaa1252.github.io/SaaS-Bootstrap-Project/album.html" target="_blank" class="other-card fade-up">
+        <h4>SHARE-RIDE Marketing Site</h4>
+        <p>Bootstrap-based SaaS marketing website for the SHARE-RIDE platform, showcasing features, pricing, and product branding.</p>
+        <span class="other-link">↗ View Live</span>
+      </a>
+
+      <a href="https://alaa1252.github.io/frontend-assignment-01-portfolio/" target="_blank" class="other-card fade-up">
+        <h4>Previous Portfolio</h4>
+        <p>An earlier portfolio iteration — a useful reference for tracking how my design sensibility and project scope have evolved.</p>
+        <span class="other-link">↗ View Live</span>
+      </a>
+
+      <div class="other-card fade-up">
+        <h4>Arduino Projects</h4>
+        <p>Embedded hardware experiments including sensor arrays, motor control systems, and IoT prototypes built during engineering coursework.</p>
+        <span class="other-link">Coursework</span>
+      </div>
+
+      <div class="other-card fade-up">
+        <h4>Class Projects</h4>
+        <p>Academic work spanning algorithms, data structures, operating systems, and networking — the theoretical foundation behind the applied work.</p>
+        <span class="other-link">University</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <div class="contact-inner">
+      <div class="section-label fade-up" data-num="04" style="margin-bottom:32px;">Contact</div>
+      <h2 class="fade-up">Let's build<br><em>something real.</em></h2>
+      <p class="fade-up">Open to full-time roles, freelance projects, and interesting collaborations. Based in Palestine, working globally.</p>
+      <div class="contact-links fade-up">
+        <a href="mailto:alaa1190a@gmail.com" class="btn btn-primary">Send an Email</a>
+        <a href="https://github.com/alaa1252" target="_blank" class="btn btn-ghost">GitHub Profile</a>
+        <a href="https://www.linkedin.com/in/alaa-alawneh-941721393/" target="_blank" class="btn btn-ghost">LinkedIn</a>
+      </div>
+      <div class="contact-meta fade-up">
+        <div class="contact-meta-item">
+          <span>Email</span>
+          <a href="mailto:alaa1190a@gmail.com">alaa1190a@gmail.com</a>
+        </div>
+        <div class="contact-meta-item">
+          <span>GitHub</span>
+          <a href="https://github.com/alaa1252" target="_blank">alaa1252</a>
+        </div>
+        <div class="contact-meta-item">
+          <span>LinkedIn</span>
+          <a href="https://www.linkedin.com/in/alaa-alawneh-941721393/" target="_blank">Alaa Alawneh</a>
+        </div>
+        <div class="contact-meta-item">
+          <span>Location</span>
+          <span>Palestine</span>
+        </div>
+        <div class="contact-meta-item">
+          <span>Availability</span>
+          <span>Open to Work</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Alaa. Designed &amp; built from scratch.</span>
+    <span>Full-Stack Engineer · Palestine</span>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

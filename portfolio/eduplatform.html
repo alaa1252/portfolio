@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduPlatform — Alaa</title>
+  <meta name="description" content="EduPlatform: A modern responsive React frontend educational web application built by Alaa.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">alaa.dev</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="mailto:alaa1190a@gmail.com" class="nav-cta btn">Hire Me</a>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav-mobile-menu">
+    <a href="index.html#about">About</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="mailto:alaa1190a@gmail.com">Hire Me</a>
+  </div>
+
+  <a href="index.html" class="back-link">← All Projects</a>
+
+  <div class="project-hero">
+    <div class="project-hero-meta">
+      <span class="meta-tag">Web Application</span>
+      <span class="meta-tag">EdTech</span>
+      <span class="meta-tag">Frontend (React)</span>
+      <span class="meta-tag">Live</span>
+    </div>
+    <h1>EduPlatform</h1>
+    <p class="project-hero-sub">
+      A dynamic EdTech application featuring course catalogs, advanced client-side filters, a fully functional CRUD dashboard, local state management, and seamless Dark Mode support.
+    </p>
+    <div class="project-links">
+      <a href="https://eduplatform-alaa.netlify.app/" target="_blank" class="btn btn-primary">Live Demo</a>
+      <a href="https://github.com/alaa1252/react-proj" target="_blank" class="btn btn-ghost">GitHub</a>
+    </div>
+  </div>
+
+  <hr class="full-divider">
+
+  <div class="case-study">
+
+    <h2 class="fade-up">Overview</h2>
+    <p class="fade-up">
+      EduPlatform is a rich, single-page educational application built with React and TailwindCSS. It replicates the complete client experience of modern e-learning tools, offering robust catalog browsing, mock multi-role dynamic flows, blog aggregation via third-party APIs, and a dashboard supporting full CRUD operations powered by persistent local storage.
+    </p>
+
+    <h2 class="fade-up">Problem</h2>
+    <p class="fade-up">
+      The goal was to build a comprehensive, multi-view React application that showcases scalable UI architectures. Key challenges addressed include global state synchronization across separated pages, advanced front-end sorting and filtering algorithms, localized state persistence, dynamic client-side routing, and explicit structural form validation.
+    </p>
+
+    <h2 class="fade-up">Architecture</h2>
+    <div class="arch-diagram fade-up">┌────────────────────────────────────────────────────────┐
+│                   React 18 Frontend                    │
+│   ┌───────────────────┬────────────────────────────┐   │
+│   │    Public Views   │    Interactive Dashboard   │   │
+│   │ (Home, Blog, etc) │   (Dynamic CRUD & Forms)   │   │
+│   └─────────┬─────────┴──────────────┬─────────────┘   │
+└─────────────┼────────────────────────┼─────────────────┘
+              │                        │
+              ▼                        ▼
+┌───────────────────────────┐ ┌──────────────────────────┐
+│ Global State (Context)    │ │ Local Data Persistence   │
+│  · useReducer Engine      │ │  · Browser localStorage  │
+│  · Theme / Theme Toggle   │ │  · Client-Side Session   │
+└─────────────┬─────────────┘ └──────────────────────────┘
+              │
+              ▼ External API
+┌───────────────────────────┐
+│     JSONPlaceholder       │
+│  · Async Blog Fetching    │
+└───────────────────────────┘</div>
+
+    <h2 class="fade-up">Tech Stack</h2>
+    <div class="tech-grid fade-up">
+      <div class="tech-cell">
+        <h4>Core Framework</h4>
+        <p>React 18 · Vite 6 · React Router DOM 6 (Dynamic Routing)</p>
+      </div>
+      <div class="tech-cell">
+        <h4>Styling & UI</h4>
+        <p>TailwindCSS 3 · Native RTL Support · Responsive Layouts · Dark Mode</p>
+      </div>
+      <div class="tech-cell">
+        <h4>State & Persistence</h4>
+        <p>Context API · useReducer Hook · LocalStorage Engine</p>
+      </div>
+      <div class="tech-cell">
+        <h4>Data Integration</h4>
+        <p>Custom useFetch Hook · JSONPlaceholder Mock API · Local JSON Datasets</p>
+      </div>
+    </div>
+
+    <h2 class="fade-up">Key Features</h2>
+    <ul class="fade-up">
+      <li>Comprehensive Dashboard containing complete client-side CRUD capabilities for resource management</li>
+      <li>Advanced Course Catalog featuring real-time Search, multi-tier Dropdown Filters, Sorting, and client-side Pagination</li>
+      <li>Unified Global State management handling dynamic user updates, UI modes, and data modifications cleanly via action dispatchers</li>
+      <li>Asynchronous external integration using a robust custom hook to populate a live public blog system</li>
+      <li>Highly accessible interface featuring complete Dark Mode support, fluid RTL spacing, and clean custom form validations</li>
+      <li>Strict client-side routing control including protective error handle fallbacks (404 views) and clean query-based parsing</li>
+    </ul>
+
+    <h2 class="fade-up">Challenges</h2>
+
+    <div class="challenge-block fade-up">
+      <h4>Complex State Management Without Redux</h4>
+      <p>Managing extensive dashboard interactions, dark mode toggles, and multi-field catalogs across isolated components could easily cause prop-drilling or un-syncable UI updates. This was cleanly solved by implementing a unified React Context framework backed by a structured useReducer architecture, simulating structured, scalable data streaming.</p>
+    </div>
+
+    <div class="challenge-block fade-up">
+      <h4>Reliable Client-Side CRUD & Persistence</h4>
+      <p>Providing interactive addition, editing, and deletion of content across pages without a specialized cloud database requires stable caching boundaries. Utilizing a localized serialization layer via browser localStorage allowed safe data mutations to persist seamlessly between full tab reloads.</p>
+    </div>
+
+    <h2 class="fade-up">What I Learned</h2>
+    <p class="fade-up">
+      EduPlatform solidified my expertise in crafting deep UI architectures. It refined my skills in designing optimized custom hooks, establishing highly reusable structural components (modals, loaders, notification banners), and orchestrating intricate client-side validation logic. I also gained practical experience navigating complex deployment configurations, notably adjusting fallback configurations on CDNs to correctly resolve client-side routes for single-page applications.
+    </p>
+
+    <div style="margin-top:64px; padding-top:40px; border-top:1px solid var(--line); display:flex; gap:16px; flex-wrap:wrap;" class="fade-up">
+      <a href="https://eduplatform-alaa.netlify.app/" target="_blank" class="btn btn-primary">Live Demo</a>
+      <a href="https://github.com/alaa1252/react-proj" target="_blank" class="btn btn-ghost">GitHub</a>
+      <a href="crypto.html" class="btn btn-ghost">Next Project →</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <span>© 2026 Alaa. Designed &amp; built from scratch.</span>
+    <span>Frontend Engineer · Palestine</span>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

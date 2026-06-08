@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Prediction — Alaa</title>
+  <meta name="description" content="Bitcoin/Crypto price prediction ML system built by Alaa.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">alaa.dev</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="mailto:alaa1190a@gmail.com" class="nav-cta btn">Hire Me</a>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav-mobile-menu">
+    <a href="index.html#about">About</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="mailto:alaa1190a@gmail.com">Hire Me</a>
+  </div>
+
+  <a href="index.html" class="back-link">← All Projects</a>
+
+  <div class="project-hero">
+    <div class="project-hero-meta">
+      <span class="meta-tag">Machine Learning</span>
+      <span class="meta-tag">Time-Series</span>
+      <span class="meta-tag">Finance</span>
+      <span class="meta-tag">Live</span>
+    </div>
+    <h1>Crypto<br>Prediction</h1>
+    <p class="project-hero-sub">
+      Bitcoin, USD and JOD price forecasting system using LSTM neural networks trained on historical OHLCV data, with a live dashboard visualising model predictions against real market prices.
+    </p>
+    <div class="project-links">
+      <a href="https://bitcoin-prediction-n3av.onrender.com/" target="_blank" class="btn btn-primary">Live Demo</a>
+      <a href="https://github.com/alaa1252/bitcoin-prediction" target="_blank" class="btn btn-ghost">GitHub</a>
+    </div>
+  </div>
+
+  <hr class="full-divider">
+
+  <div class="case-study">
+
+    <h2 class="fade-up">Overview</h2>
+    <p class="fade-up">
+      This project applies Long Short-Term Memory (LSTM) neural networks to the problem of cryptocurrency price prediction. The model is trained on historical Bitcoin OHLCV (open, high, low, close, volume) data and produces short-horizon price forecasts. A live web dashboard displays predicted vs. actual prices, model confidence, and historical accuracy metrics.
+    </p>
+    <p class="fade-up">
+      The application is deployed live on Render. The model runs server-side, and the frontend fetches predictions via a REST API.
+    </p>
+
+    <h2 class="fade-up">Problem</h2>
+    <p class="fade-up">
+      Cryptocurrency markets are highly volatile and non-stationary, making them a challenging but widely studied domain for time-series forecasting. The goal was to implement a proper ML pipeline — data acquisition, feature engineering, model training, evaluation, and deployment — and expose it through a usable interface rather than just a Jupyter notebook.
+    </p>
+
+    <h2 class="fade-up">Architecture</h2>
+    <div class="arch-diagram fade-up">┌──────────────────────────────┐
+│     Historical Price Data     │
+│  (Binance / Yahoo Finance API)│
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│      Data Pipeline (Python)   │
+│  Normalisation · Windowing    │
+│  Feature Engineering          │
+│  Train / Test Split           │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│       LSTM Model              │
+│   TensorFlow / Keras          │
+│   Sequence → Price Forecast   │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│     Flask REST API            │
+│  /predict  /history  /metrics │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│      React Dashboard          │
+│   Chart.js · Price Chart      │
+│   Prediction Overlay          │
+│   Error Metrics Display       │
+└──────────────────────────────┘</div>
+
+    <h2 class="fade-up">Tech Stack</h2>
+    <div class="tech-grid fade-up">
+      <div class="tech-cell">
+        <h4>Machine Learning</h4>
+        <p>Python · TensorFlow / Keras · LSTM · scikit-learn · NumPy · Pandas</p>
+      </div>
+      <div class="tech-cell">
+        <h4>Data</h4>
+        <p>Historical OHLCV data · MinMax normalisation · Sliding window sequences</p>
+      </div>
+      <div class="tech-cell">
+        <h4>Backend API</h4>
+        <p>Flask · REST endpoints for predictions, history, and model metrics</p>
+      </div>
+      <div class="tech-cell">
+        <h4>Frontend</h4>
+        <p>React · Chart.js · Predicted vs actual price overlay · Responsive dashboard</p>
+      </div>
+      <div class="tech-cell">
+        <h4>Evaluation</h4>
+        <p>RMSE · MAE · Directional accuracy · Train/test split validation</p>
+      </div>
+      <div class="tech-cell">
+        <h4>Deployment</h4>
+        <p>Hosted on Render · Model loaded on startup · Live predictions via API</p>
+      </div>
+    </div>
+
+    <h2 class="fade-up">How the Model Works</h2>
+    <ul class="fade-up">
+      <li>Historical OHLCV data is collected and cleaned, removing gaps and outliers</li>
+      <li>Prices are normalised using MinMaxScaler to the [0, 1] range for stable training</li>
+      <li>A sliding window of N past timesteps is used as input to predict the next closing price</li>
+      <li>The LSTM network learns temporal dependencies across the input sequence</li>
+      <li>Predictions are inverse-transformed back to USD for display</li>
+      <li>Model performance is tracked with RMSE, MAE, and directional accuracy (did it predict up or down correctly?)</li>
+    </ul>
+
+    <h2 class="fade-up">Challenges</h2>
+
+    <div class="challenge-block fade-up">
+      <h4>Overfitting on Volatile Data</h4>
+      <p>Cryptocurrency price data is highly non-stationary — patterns that held for months can reverse overnight. Combating overfitting required dropout layers, early stopping, and a walk-forward validation strategy that better reflects real forecasting conditions than a simple train/test split.</p>
+    </div>
+
+    <div class="challenge-block fade-up">
+      <h4>Deploying a Trained Model as a Live API</h4>
+      <p>Packaging a Keras model and scaler together, loading them correctly at server startup, and exposing predictions through a stateless REST API required careful serialisation. Model and scaler are saved as separate files and loaded into memory once on startup rather than on every request.</p>
+    </div>
+
+    <div class="challenge-block fade-up">
+      <h4>Communicating Uncertainty Honestly</h4>
+      <p>Price prediction models are frequently misleading when presented without caveats. The dashboard explicitly displays error metrics and uses a confidence band rather than a single predicted price, making it clear what the model can and cannot claim.</p>
+    </div>
+
+    <h2 class="fade-up">What I Learned</h2>
+    <p class="fade-up">
+      This project taught me that the hardest part of ML engineering is not the model — it's the pipeline around it. Data cleaning, proper validation, serialisation, and serving are where most of the engineering work lives. I also developed a much more grounded intuition for when ML models are genuinely useful and when they are noise dressed up as signal.
+    </p>
+
+    <div style="margin-top:64px; padding-top:40px; border-top:1px solid var(--line); display:flex; gap:16px; flex-wrap:wrap;" class="fade-up">
+      <a href="https://bitcoin-prediction-n3av.onrender.com/" target="_blank" class="btn btn-primary">Live Demo</a>
+      <a href="https://github.com/alaa1252/bitcoin-prediction" target="_blank" class="btn btn-ghost">GitHub</a>
+      <a href="index.html#projects" class="btn btn-ghost">← All Projects</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <span>© 2026 Alaa. Designed &amp; built from scratch.</span>
+    <span>Full-Stack Engineer · Palestine</span>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
