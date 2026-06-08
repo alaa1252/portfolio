@@ -17,13 +17,6 @@ portfolio/
 └── README.md
 ```
 
-## Deploy to GitHub Pages
-
-1. Create a new GitHub repo named `alaa1252.github.io` (or any repo name)
-2. Push all files keeping the `assets/` folder structure intact
-3. Go to **Settings → Pages → Source → Deploy from branch → main**
-4. Your portfolio will be live at `https://alaa1252.github.io`
-
 > **Important:** Keep the folder structure exactly as-is. The HTML files reference `assets/css/style.css` and `assets/js/main.js` by relative path.
 
 ## Contacts used
