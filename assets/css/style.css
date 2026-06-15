@@ -805,6 +805,210 @@ footer span {
   transform: translateY(0);
 }
 
+/* ─── LEETCODE SECTION ─── */
+.lc-wrapper {
+  padding: 60px clamp(24px, 5vw, 80px);
+}
+
+.lc-stats-bar {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid var(--line);
+  background: var(--bg-3);
+  margin-bottom: 1px;
+  flex-wrap: wrap;
+}
+
+.lc-stat {
+  flex: 1;
+  min-width: 120px;
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.lc-stat-divider {
+  width: 1px;
+  height: 48px;
+  background: var(--line);
+  flex-shrink: 0;
+}
+
+.lc-stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1;
+}
+
+.lc-stat-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--text-dimmer);
+  text-transform: uppercase;
+}
+
+.lc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--line);
+  margin-bottom: 1px;
+}
+
+.lc-card {
+  background: var(--bg-3);
+  padding: 36px 40px;
+}
+
+.lc-card-title {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--text-dimmer);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* Difficulty bars */
+.lc-difficulty-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.lc-diff-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lc-diff-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.lc-diff-label.easy   { color: #6ee7b7; }
+.lc-diff-label.medium { color: #fbbf24; }
+.lc-diff-label.hard   { color: #f87171; }
+
+.lc-diff-bar-wrap {
+  flex: 1;
+  height: 3px;
+  background: var(--line);
+  position: relative;
+}
+
+.lc-diff-bar {
+  height: 100%;
+  background: var(--white);
+  opacity: 0.25;
+}
+
+.lc-diff-count {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text);
+  width: 80px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.lc-diff-total {
+  color: var(--text-dimmer);
+}
+
+/* Languages */
+.lc-lang-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lc-lang-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.lc-lang-name {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text);
+  letter-spacing: 0.04em;
+}
+
+.lc-lang-count {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-dimmer);
+}
+
+/* Skills */
+.lc-skill-group {
+  margin-bottom: 20px;
+}
+
+.lc-skill-tier {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--text-dimmer);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.lc-skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.lc-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--text-dim);
+  border: 1px solid var(--line);
+  padding: 5px 10px;
+  background: var(--bg);
+}
+
+/* Badges */
+.lc-badge-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.lc-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-dim);
+  border: 1px solid var(--line);
+  padding: 8px 14px;
+  background: var(--bg);
+}
+
+.lc-badge-highlight {
+  border-color: var(--line-strong);
+  color: var(--white);
+}
+
+.lc-cta {
+  padding-top: 32px;
+}
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 900px) {
   .about-grid { grid-template-columns: 1fr; }
@@ -815,10 +1019,16 @@ footer span {
   .nav-cta { display: none; }
   .nav-hamburger { display: flex; }
   .tech-grid { grid-template-columns: 1fr; }
+  .lc-grid { grid-template-columns: 1fr; }
+  .lc-stat-divider { display: none; }
+  .lc-stat { border-bottom: 1px solid var(--line); }
 }
 
 @media (max-width: 600px) {
   .other-grid { grid-template-columns: 1fr; }
   .contact-meta { gap: 24px; }
   .arch-diagram { font-size: 11px; padding: 24px; }
+  .lc-stats-bar { flex-direction: column; }
+  .lc-stat { padding: 20px 24px; }
+  .lc-card { padding: 28px 24px; }
 }
